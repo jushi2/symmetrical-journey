@@ -1,0 +1,44 @@
+#Calling function for analyze data
+def analyze_student(data):
+    pass_student= []
+    fail_student= []
+    average_mark= []
+    high_mark= []
+    low_mark= []
+    excellent_student= []
+    count=[]
+    total_mark=()
+    for student, mark in data:
+        if student['mark']>=40:
+            pass_student+=1
+        elif student['mark']<40:
+            fail_student+=1
+        if student['mark']>80:
+            excellent_student+=1
+        count+=1
+        print(f"Print Count: {count}")
+        total_mark+=student['mark']
+        print(f"Total Mark: {total_mark}")
+        high_mark = max(data)
+        low_mark = min(data)
+    average_mark=total_mark/count
+    print(f"Average Mark: {average_mark}")
+    print(f"High Mark: {high_mark}")
+    print(f"Low Mark: {low_mark}")
+
+    return  pass_student, fail_student, excellent_student, count,total_mark,high_mark,low_mark
+
+students = [
+    ("John", 85),
+    ("Sara", 39),
+    ("Mike", 75),
+    ("Emma", 92),
+    ("Tom", 30),
+    ("Lily", 50)
+]
+
+pass_student, fail_student, excellent_student, count,total_mark,high_mark,low_mark=analyze_student(students)
+
+print(f"Pass student: {pass_student}")
+print(f"Fail student: {fail_student}")
+print(f"Excellent student: {excellent_student}")
