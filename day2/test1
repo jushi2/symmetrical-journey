@@ -6,18 +6,17 @@ def analyze_student(data):
     total_marks = 0
     marks = []  # list of only marks
     for student, mark in data:
-        if student['mark']>=40:
-            pass_student+=1
-        elif student['mark']<40:
-            fail_student+=1
-        if student['mark']>80:
-            excellent_student+=1
-        count+=1
-        print(f"Print Count: {count}")
-        total_mark+=student['mark']
-        print(f"Total Mark: {total_mark}")
-        high_mark = max(data)
-        low_mark = min(data)
+        if mark >= 40:
+            pass_student += 1
+        else:
+            fail_student += 1
+
+        if mark > 80:
+            excellent_student.append(student)
+
+        total_marks += mark
+        marks.append(mark)
+
     average_mark=total_mark/count
     print(f"Average Mark: {average_mark}")
     print(f"High Mark: {high_mark}")
