@@ -1,13 +1,10 @@
 #Calling function for analyze data
 def analyze_student(data):
-    pass_student= []
-    fail_student= []
-    average_mark= []
-    high_mark= []
-    low_mark= []
-    excellent_student= []
-    count=[]
-    total_mark=()
+   pass_student = 0
+    fail_student = 0
+    excellent_student = []
+    total_marks = 0
+    marks = []  # list of only marks
     for student, mark in data:
         if student['mark']>=40:
             pass_student+=1
